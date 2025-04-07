@@ -6,10 +6,14 @@
     <title>Mutlaq Portugal Trip Planner (April 25-May 2, 2025)</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
     <header>
-      <h1>Mutlaq Portugal Trip Planner</h1>
+      <h1>Mutlaq's Solo Portugal Adventure</h1>
       <h2>April 25 - May 2, 2025</h2>
     </header>
 
@@ -17,9 +21,11 @@
       <ul>
         <li><a href="#overview">Trip Overview</a></li>
         <li><a href="#itinerary">Day-by-Day Itinerary</a></li>
-        <li><a href="#hotels">Hotels</a></li>
+        <li><a href="#hotels">Accommodations</a></li>
         <li><a href="#restaurants">Restaurants</a></li>
         <li><a href="#attractions">Attractions</a></li>
+        <li><a href="#coffee">Coffee Shops</a></li>
+        <li><a href="#views">Amazing Views</a></li>
         <li><a href="#transportation">Transportation</a></li>
       </ul>
     </nav>
@@ -39,12 +45,20 @@
           <div class="overview-card">
             <h3>Main Cities</h3>
             <p>
-              Lisbon (4 days), Sintra (1 day), Cascais (1 day), Porto (2 days)
+              Lisbon (3 days), Sesimbra/Beach (1 day), Sintra (1 day), Cascais
+              (1 day), Porto (2 days)
             </p>
           </div>
           <div class="overview-card">
             <h3>Total Budget Estimate</h3>
-            <p>€1,500 - €2,500 per person</p>
+            <p>€1,300 - €2,000 per person</p>
+          </div>
+          <div class="overview-card">
+            <h3>Trip Focus</h3>
+            <p>
+              Relaxed solo travel with coastal views, sea activities, and
+              authentic Portuguese experiences
+            </p>
           </div>
         </div>
       </section>
@@ -54,6 +68,17 @@
 
         <div class="day-container">
           <h3>Day 1: April 25, 2025 - Arrival in Lisbon</h3>
+          <div class="weather-info">
+            <div class="weather-item">
+              <span class="weather-label">Morning:</span> 15°C, Partly Cloudy
+            </div>
+            <div class="weather-item">
+              <span class="weather-label">Afternoon:</span> 19°C, Sunny
+            </div>
+            <div class="weather-item">
+              <span class="weather-label">Evening:</span> 16°C, Clear
+            </div>
+          </div>
           <div class="time-section">
             <div class="time-card">
               <h4>Morning</h4>
@@ -64,7 +89,9 @@
                 </li>
                 <li class="item">
                   <input type="checkbox" id="day1-2" />
-                  <label for="day1-2">Check-in at hotel or store luggage</label>
+                  <label for="day1-2"
+                    >Check-in at accommodation or store luggage</label
+                  >
                 </li>
               </ul>
             </div>
@@ -78,7 +105,7 @@
                 <li class="item">
                   <input type="checkbox" id="day1-4" />
                   <label for="day1-4"
-                    >Walking tour of Baixa and Chiado districts</label
+                    >Easy walking tour of Baixa district</label
                   >
                 </li>
               </ul>
@@ -95,8 +122,12 @@
                 <li class="item">
                   <input type="checkbox" id="day1-6" />
                   <label for="day1-6"
-                    >Evening stroll around Praça do Comércio</label
+                    >Relaxed evening stroll around Praça do Comércio</label
                   >
+                </li>
+                <li class="item">
+                  <input type="checkbox" id="day1-7" />
+                  <label for="day1-7">Early night to recover from travel</label>
                 </li>
               </ul>
             </div>
@@ -104,7 +135,18 @@
         </div>
 
         <div class="day-container">
-          <h3>Day 2: April 26, 2025 - Historic Lisbon</h3>
+          <h3>Day 2: April 26, 2025 - Coastal Lisbon</h3>
+          <div class="weather-info">
+            <div class="weather-item">
+              <span class="weather-label">Morning:</span> 16°C, Mostly Sunny
+            </div>
+            <div class="weather-item">
+              <span class="weather-label">Afternoon:</span> 20°C, Sunny
+            </div>
+            <div class="weather-item">
+              <span class="weather-label">Evening:</span> 17°C, Clear
+            </div>
+          </div>
           <div class="time-section">
             <div class="time-card">
               <h4>Morning</h4>
@@ -112,12 +154,21 @@
                 <li class="item">
                   <input type="checkbox" id="day2-1" />
                   <label for="day2-1"
-                    >Breakfast at hotel or local café (€5-10)</label
+                    >Breakfast at Copenhagen Coffee Lab (€5-10)</label
                   >
                 </li>
                 <li class="item">
                   <input type="checkbox" id="day2-2" />
-                  <label for="day2-2">Visit São Jorge Castle (€15)</label>
+                  <label for="day2-2"
+                    >Visit Miradouro de Santa Luzia for amazing views
+                    (Free)</label
+                  >
+                </li>
+                <li class="item">
+                  <input type="checkbox" id="day2-2b" />
+                  <label for="day2-2b"
+                    >Stroll through Alfama's narrow streets</label
+                  >
                 </li>
               </ul>
             </div>
@@ -130,11 +181,16 @@
                 </li>
                 <li class="item">
                   <input type="checkbox" id="day2-4" />
-                  <label for="day2-4">Explore Alfama's narrow streets</label>
+                  <label for="day2-4"
+                    >Take the iconic Tram 28 for a scenic tour (€3)</label
+                  >
                 </li>
                 <li class="item">
                   <input type="checkbox" id="day2-5" />
-                  <label for="day2-5">Visit Lisbon Cathedral (€4)</label>
+                  <label for="day2-5"
+                    >Relax at Miradouro das Portas do Sol viewpoint
+                    (Free)</label
+                  >
                 </li>
               </ul>
             </div>
@@ -144,7 +200,13 @@
                 <li class="item">
                   <input type="checkbox" id="day2-6" />
                   <label for="day2-6"
-                    >Dinner with Fado music show (€35-50)</label
+                    >Sunset at Miradouro da Graça viewpoint (Free)</label
+                  >
+                </li>
+                <li class="item">
+                  <input type="checkbox" id="day2-7" />
+                  <label for="day2-7"
+                    >Dinner with Fado music show (€35-45)</label
                   >
                 </li>
               </ul>
@@ -154,6 +216,17 @@
 
         <div class="day-container">
           <h3>Day 3: April 27, 2025 - Belém District</h3>
+          <div class="weather-info">
+            <div class="weather-item">
+              <span class="weather-label">Morning:</span> 16°C, Sunny
+            </div>
+            <div class="weather-item">
+              <span class="weather-label">Afternoon:</span> 21°C, Sunny
+            </div>
+            <div class="weather-item">
+              <span class="weather-label">Evening:</span> 17°C, Clear
+            </div>
+          </div>
           <div class="time-section">
             <div class="time-card">
               <h4>Morning</h4>
@@ -161,12 +234,16 @@
                 <li class="item">
                   <input type="checkbox" id="day3-1" />
                   <label for="day3-1"
-                    >Breakfast at hotel or local café (€5-10)</label
+                    >Breakfast at Hello, Kristof café (€5-10)</label
                   >
                 </li>
                 <li class="item">
                   <input type="checkbox" id="day3-2" />
-                  <label for="day3-2">Visit Jerónimos Monastery (€12.5)</label>
+                  <label for="day3-2">Take tram to Belém district</label>
+                </li>
+                <li class="item">
+                  <input type="checkbox" id="day3-3" />
+                  <label for="day3-3">Visit Belém Tower (€6)</label>
                 </li>
               </ul>
             </div>
@@ -174,18 +251,18 @@
               <h4>Afternoon</h4>
               <ul>
                 <li class="item">
-                  <input type="checkbox" id="day3-3" />
-                  <label for="day3-3"
+                  <input type="checkbox" id="day3-4" />
+                  <label for="day3-4"
                     >Try famous Pastéis de Belém (€1.5 each)</label
                   >
                 </li>
                 <li class="item">
-                  <input type="checkbox" id="day3-4" />
-                  <label for="day3-4">Visit Belém Tower (€6)</label>
+                  <input type="checkbox" id="day3-5" />
+                  <label for="day3-5">Walk along riverside promenade</label>
                 </li>
                 <li class="item">
-                  <input type="checkbox" id="day3-5" />
-                  <label for="day3-5">Monument to the Discoveries (€5)</label>
+                  <input type="checkbox" id="day3-6" />
+                  <label for="day3-6">Monument to the Discoveries (€5)</label>
                 </li>
               </ul>
             </div>
@@ -193,9 +270,20 @@
               <h4>Evening</h4>
               <ul>
                 <li class="item">
-                  <input type="checkbox" id="day3-6" />
-                  <label for="day3-6"
+                  <input type="checkbox" id="day3-7" />
+                  <label for="day3-7">Return to city center</label>
+                </li>
+                <li class="item">
+                  <input type="checkbox" id="day3-8" />
+                  <label for="day3-8"
                     >Dinner at Solar dos Presuntos (€25-35)</label
+                  >
+                </li>
+                <li class="item">
+                  <input type="checkbox" id="day3-9" />
+                  <label for="day3-9"
+                    >Evening drinks at Park Bar rooftop for city views
+                    (€8-12)</label
                   >
                 </li>
               </ul>
@@ -204,7 +292,18 @@
         </div>
 
         <div class="day-container">
-          <h3>Day 4: April 28, 2025 - Modern Lisbon</h3>
+          <h3>Day 4: April 28, 2025 - Sesimbra Beach Day</h3>
+          <div class="weather-info">
+            <div class="weather-item">
+              <span class="weather-label">Morning:</span> 17°C, Sunny
+            </div>
+            <div class="weather-item">
+              <span class="weather-label">Afternoon:</span> 22°C, Sunny
+            </div>
+            <div class="weather-item">
+              <span class="weather-label">Evening:</span> 18°C, Clear
+            </div>
+          </div>
           <div class="time-section">
             <div class="time-card">
               <h4>Morning</h4>
@@ -212,12 +311,16 @@
                 <li class="item">
                   <input type="checkbox" id="day4-1" />
                   <label for="day4-1"
-                    >Breakfast at hotel or local café (€5-10)</label
+                    >Early breakfast at accommodation (€5-10)</label
                   >
                 </li>
                 <li class="item">
                   <input type="checkbox" id="day4-2" />
-                  <label for="day4-2">Visit Oceanário de Lisboa (€25)</label>
+                  <label for="day4-2">Bus to Sesimbra (€4.50, 1 hour)</label>
+                </li>
+                <li class="item">
+                  <input type="checkbox" id="day4-3" />
+                  <label for="day4-3">Arrive at Sesimbra beach town</label>
                 </li>
               </ul>
             </div>
@@ -225,12 +328,26 @@
               <h4>Afternoon</h4>
               <ul>
                 <li class="item">
-                  <input type="checkbox" id="day4-3" />
-                  <label for="day4-3">Lunch at LX Factory (€15-20)</label>
+                  <input type="checkbox" id="day4-4" />
+                  <label for="day4-4"
+                    >Kayaking or stand-up paddleboarding (€25)</label
+                  >
                 </li>
                 <li class="item">
-                  <input type="checkbox" id="day4-4" />
-                  <label for="day4-4">Explore LX Factory shops and art</label>
+                  <input type="checkbox" id="day4-5" />
+                  <label for="day4-5"
+                    >Seafood lunch at beachfront restaurant (€20-25)</label
+                  >
+                </li>
+                <li class="item">
+                  <input type="checkbox" id="day4-6" />
+                  <label for="day4-6">Relax on Praia da Califórnia beach</label>
+                </li>
+                <li class="item">
+                  <input type="checkbox" id="day4-7" />
+                  <label for="day4-7"
+                    >Explore Sesimbra Castle for panoramic views (€3)</label
+                  >
                 </li>
               </ul>
             </div>
@@ -238,13 +355,19 @@
               <h4>Evening</h4>
               <ul>
                 <li class="item">
-                  <input type="checkbox" id="day4-5" />
-                  <label for="day4-5">Dinner at Time Out Market (€15-25)</label>
+                  <input type="checkbox" id="day4-8" />
+                  <label for="day4-8">Return to Lisbon</label>
                 </li>
                 <li class="item">
-                  <input type="checkbox" id="day4-6" />
-                  <label for="day4-6"
-                    >Night view from Santa Justa Lift (€5.30)</label
+                  <input type="checkbox" id="day4-9" />
+                  <label for="day4-9"
+                    >Light dinner at Time Out Market (€15-20)</label
+                  >
+                </li>
+                <li class="item">
+                  <input type="checkbox" id="day4-10" />
+                  <label for="day4-10"
+                    >Evening walk at Miradouro de Santa Catarina (Free)</label
                   >
                 </li>
               </ul>
@@ -254,17 +377,32 @@
 
         <div class="day-container">
           <h3>Day 5: April 29, 2025 - Sintra Day Trip</h3>
+          <div class="weather-info">
+            <div class="weather-item">
+              <span class="weather-label">Morning:</span> 15°C, Partly Cloudy
+            </div>
+            <div class="weather-item">
+              <span class="weather-label">Afternoon:</span> 18°C, Mostly Sunny
+            </div>
+            <div class="weather-item">
+              <span class="weather-label">Evening:</span> 16°C, Clear
+            </div>
+          </div>
           <div class="time-section">
             <div class="time-card">
               <h4>Morning</h4>
               <ul>
                 <li class="item">
                   <input type="checkbox" id="day5-1" />
-                  <label for="day5-1">Breakfast at hotel (€5-10)</label>
+                  <label for="day5-1"
+                    >Breakfast at Fabrica Coffee Roasters (€5-10)</label
+                  >
                 </li>
                 <li class="item">
                   <input type="checkbox" id="day5-2" />
-                  <label for="day5-2">Train to Sintra (€4.60 round trip)</label>
+                  <label for="day5-2"
+                    >Train to Sintra (€4.60 round trip, 40 minutes)</label
+                  >
                 </li>
                 <li class="item">
                   <input type="checkbox" id="day5-3" />
@@ -281,7 +419,13 @@
                 </li>
                 <li class="item">
                   <input type="checkbox" id="day5-5" />
-                  <label for="day5-5">Visit Quinta da Regaleira (€22.72)</label>
+                  <label for="day5-5"
+                    >Visit Quinta da Regaleira gardens and wells (€10)</label
+                  >
+                </li>
+                <li class="item">
+                  <input type="checkbox" id="day5-6" />
+                  <label for="day5-6">Walk around historical center</label>
                 </li>
               </ul>
             </div>
@@ -289,12 +433,12 @@
               <h4>Evening</h4>
               <ul>
                 <li class="item">
-                  <input type="checkbox" id="day5-6" />
-                  <label for="day5-6">Return to Lisbon</label>
+                  <input type="checkbox" id="day5-7" />
+                  <label for="day5-7">Return to Lisbon</label>
                 </li>
                 <li class="item">
-                  <input type="checkbox" id="day5-7" />
-                  <label for="day5-7"
+                  <input type="checkbox" id="day5-8" />
+                  <label for="day5-8"
                     >Dinner at Casa do Alentejo (€20-30)</label
                   >
                 </li>
@@ -305,23 +449,38 @@
 
         <div class="day-container">
           <h3>Day 6: April 30, 2025 - Cascais Day Trip</h3>
+          <div class="weather-info">
+            <div class="weather-item">
+              <span class="weather-label">Morning:</span> 16°C, Sunny
+            </div>
+            <div class="weather-item">
+              <span class="weather-label">Afternoon:</span> 20°C, Sunny
+            </div>
+            <div class="weather-item">
+              <span class="weather-label">Evening:</span> 17°C, Clear
+            </div>
+          </div>
           <div class="time-section">
             <div class="time-card">
               <h4>Morning</h4>
               <ul>
                 <li class="item">
                   <input type="checkbox" id="day6-1" />
-                  <label for="day6-1">Breakfast at hotel (€5-10)</label>
+                  <label for="day6-1"
+                    >Breakfast at Nicolau Lisboa (€6-12)</label
+                  >
                 </li>
                 <li class="item">
                   <input type="checkbox" id="day6-2" />
                   <label for="day6-2"
-                    >Train to Cascais (€4.50 round trip)</label
+                    >Train to Cascais (€4.50 round trip, 30 minutes)</label
                   >
                 </li>
                 <li class="item">
                   <input type="checkbox" id="day6-3" />
-                  <label for="day6-3">Explore Cascais town center</label>
+                  <label for="day6-3"
+                    >Explore Cascais town center and marina</label
+                  >
                 </li>
               </ul>
             </div>
@@ -336,11 +495,16 @@
                 </li>
                 <li class="item">
                   <input type="checkbox" id="day6-5" />
-                  <label for="day6-5">Visit Boca do Inferno (Free)</label>
+                  <label for="day6-5"
+                    >Visit Boca do Inferno sea cliff (Free)</label
+                  >
                 </li>
                 <li class="item">
                   <input type="checkbox" id="day6-6" />
-                  <label for="day6-6">Relax at Praia da Ribeira (Free)</label>
+                  <label for="day6-6"
+                    >Bike ride along the coastal promenade to Guincho Beach
+                    (Bike rental €10)</label
+                  >
                 </li>
               </ul>
             </div>
@@ -366,6 +530,17 @@
 
         <div class="day-container">
           <h3>Day 7: May 1, 2025 - Porto</h3>
+          <div class="weather-info">
+            <div class="weather-item">
+              <span class="weather-label">Morning:</span> 15°C, Partly Cloudy
+            </div>
+            <div class="weather-item">
+              <span class="weather-label">Afternoon:</span> 19°C, Mostly Sunny
+            </div>
+            <div class="weather-item">
+              <span class="weather-label">Evening:</span> 16°C, Clear
+            </div>
+          </div>
           <div class="time-section">
             <div class="time-card">
               <h4>Morning</h4>
@@ -373,7 +548,7 @@
                 <li class="item">
                   <input type="checkbox" id="day7-1" />
                   <label for="day7-1"
-                    >Breakfast and check out of Lisbon hotel</label
+                    >Breakfast and check out of Lisbon accommodation</label
                   >
                 </li>
                 <li class="item">
@@ -382,7 +557,7 @@
                 </li>
                 <li class="item">
                   <input type="checkbox" id="day7-3" />
-                  <label for="day7-3">Check in at Porto hotel</label>
+                  <label for="day7-3">Check in at Porto accommodation</label>
                 </li>
               </ul>
             </div>
@@ -398,12 +573,15 @@
                 <li class="item">
                   <input type="checkbox" id="day7-5" />
                   <label for="day7-5"
-                    >Walking tour of Porto's historic center</label
+                    >Relaxed walking tour of Porto's riverside area</label
                   >
                 </li>
                 <li class="item">
                   <input type="checkbox" id="day7-6" />
-                  <label for="day7-6">Visit Porto Cathedral (€3.50)</label>
+                  <label for="day7-6"
+                    >Miradouro da Vitória viewpoint for panoramic views
+                    (Free)</label
+                  >
                 </li>
               </ul>
             </div>
@@ -422,6 +600,12 @@
                     >Dinner at a riverside restaurant (€25-35)</label
                   >
                 </li>
+                <li class="item">
+                  <input type="checkbox" id="day7-9" />
+                  <label for="day7-9"
+                    >Night views from Dom Luís I Bridge (Free)</label
+                  >
+                </li>
               </ul>
             </div>
           </div>
@@ -429,23 +613,34 @@
 
         <div class="day-container">
           <h3>Day 8: May 2, 2025 - Porto and Departure</h3>
+          <div class="weather-info">
+            <div class="weather-item">
+              <span class="weather-label">Morning:</span> 15°C, Sunny
+            </div>
+            <div class="weather-item">
+              <span class="weather-label">Afternoon:</span> 20°C, Sunny
+            </div>
+            <div class="weather-item">
+              <span class="weather-label">Evening:</span> 17°C, Clear
+            </div>
+          </div>
           <div class="time-section">
             <div class="time-card">
               <h4>Morning</h4>
               <ul>
                 <li class="item">
                   <input type="checkbox" id="day8-1" />
-                  <label for="day8-1">Breakfast at hotel (€5-10)</label>
+                  <label for="day8-1">Breakfast at Majestic Café (€8-15)</label>
                 </li>
                 <li class="item">
                   <input type="checkbox" id="day8-2" />
-                  <label for="day8-2">Visit Clérigos Tower (€6)</label>
+                  <label for="day8-2"
+                    >Visit Clérigos Tower for views (€6)</label
+                  >
                 </li>
                 <li class="item">
                   <input type="checkbox" id="day8-3" />
-                  <label for="day8-3"
-                    >Explore Livraria Lello (€5, famous bookstore)</label
-                  >
+                  <label for="day8-3">Explore Livraria Lello (€5)</label>
                 </li>
               </ul>
             </div>
@@ -458,12 +653,12 @@
                 </li>
                 <li class="item">
                   <input type="checkbox" id="day8-5" />
-                  <label for="day8-5">Last-minute shopping for souvenirs</label>
+                  <label for="day8-5">Relaxed shopping for souvenirs</label>
                 </li>
                 <li class="item">
                   <input type="checkbox" id="day8-6" />
                   <label for="day8-6"
-                    >Check out of hotel and transfer to airport</label
+                    >Check out of accommodation and transfer to airport</label
                   >
                 </li>
               </ul>
@@ -482,57 +677,148 @@
       </section>
 
       <section id="hotels">
-        <h2>Recommended Hotels</h2>
+        <h2>Recommended Accommodations</h2>
         <div class="hotel-container">
           <div class="hotel-card">
-            <h3>Lisbon - Hotel Avenida Palace</h3>
-            <p class="price">€440 per night</p>
+            <h3>Lisbon - The Lumiares Hotel & Spa</h3>
+            <p class="price">€180 per night</p>
             <p>
-              Historic 5-star hotel with elegant decor in a central location
-              near shops and restaurants. Features large comfortable rooms and
-              highly praised breakfast.
+              Boutique hotel in the trendy Bairro Alto district with spa
+              facilities and rooftop bar. Apartment-style rooms with
+              kitchenettes perfect for solo travelers.
             </p>
-            <p>Address: Rua 1º de Dezembro 123, 1200-359 Lisboa</p>
+            <p>
+              <span class="location-label">Address:</span> Rua do Diário de
+              Notícias 142, 1200-146 Lisboa
+            </p>
+            <span class="safety-badge">Safe Area</span>
+            <span class="distance-badge">Central Location</span>
+          </div>
+
+          <div class="hotel-card">
+            <h3>Lisbon - Brown's Central Hotel</h3>
+            <p class="price">€120 per night</p>
+            <p>
+              Stylish boutique hotel with modern amenities in the heart of
+              downtown. Excellent staff who can help with solo travel advice and
+              local recommendations.
+            </p>
+            <p>
+              <span class="location-label">Address:</span> Rua da Assunção 75,
+              1100-042 Lisboa
+            </p>
+            <span class="safety-badge">Safe Area</span>
+            <span class="distance-badge">Close to Attractions</span>
           </div>
 
           <div class="hotel-card">
             <h3>Lisbon - Lisboa Pessoa Hotel</h3>
-            <p class="price">€240 per night</p>
+            <p class="price">€110 per night</p>
             <p>
               4-star hotel with central location, spacious and clean rooms,
               complimentary spa facilities, and a rooftop bar with city views.
             </p>
-            <p>Address: Rua da Oliveira ao Carmo 8, 1200-309 Lisboa</p>
+            <p>
+              <span class="location-label">Address:</span> Rua da Oliveira ao
+              Carmo 8, 1200-309 Lisboa
+            </p>
+            <span class="safety-badge">Safe Area</span>
+            <span class="distance-badge">Close to Transport</span>
           </div>
 
           <div class="hotel-card">
-            <h3>Lisbon - Hotel Borges Chiado</h3>
-            <p class="price">€69 per night</p>
+            <h3>Lisbon - Selina Secret Garden</h3>
+            <p class="price">€70 per night</p>
             <p>
-              Budget-friendly hotel centrally located in a vibrant area, close
-              to restaurants, bars, and public transportation.
+              Modern hostel with private rooms, co-working space, and regular
+              social events. Perfect for solo travelers looking to meet others
+              in a safe environment.
             </p>
-            <p>Address: Rua Garrett 108, 1200-205 Lisboa</p>
+            <p>
+              <span class="location-label">Address:</span> Rua de São Paulo 31,
+              1200-426 Lisboa
+            </p>
+            <span class="safety-badge">Good for Solo Travelers</span>
+            <span class="distance-badge">Social Atmosphere</span>
           </div>
 
           <div class="hotel-card">
-            <h3>Porto - Pestana Porto - A Brasileira</h3>
-            <p class="price">€180 per night</p>
+            <h3>Lisbon - Airbnb in Alfama with View</h3>
+            <p class="price">€90 per night</p>
             <p>
-              Centrally located 5-star hotel in a historic building with modern
-              amenities and an excellent breakfast.
+              Charming studio apartment in the historic Alfama district with a
+              small balcony offering stunning river views. Fully equipped
+              kitchen and authentic neighborhood.
             </p>
-            <p>Address: Rua do Bonjardim 150, 4000-453 Porto</p>
+            <p>
+              <span class="location-label">Location:</span> Alfama district,
+              10-minute walk to São Jorge Castle
+            </p>
+            <span class="safety-badge">Local Experience</span>
+            <span class="distance-badge">Amazing View</span>
+          </div>
+
+          <div class="hotel-card">
+            <h3>Lisbon - Airbnb Chiado Apartment</h3>
+            <p class="price">€85 per night</p>
+            <p>
+              Modern, bright apartment in the central Chiado district with
+              panoramic views from a shared rooftop terrace. Walking distance to
+              major attractions and restaurants.
+            </p>
+            <p>
+              <span class="location-label">Location:</span> Chiado district,
+              5-minute walk to Baixa-Chiado metro
+            </p>
+            <span class="safety-badge">Safe Area</span>
+            <span class="distance-badge">Central Location</span>
+          </div>
+
+          <div class="hotel-card">
+            <h3>Porto - Torel Avantgarde</h3>
+            <p class="price">€140 per night</p>
+            <p>
+              Boutique art hotel with beautiful Douro River views, infinity
+              pool, and spa. Each room is designed around a different artist or
+              creative.
+            </p>
+            <p>
+              <span class="location-label">Address:</span> Rua da Restauração
+              336, 4050-506 Porto
+            </p>
+            <span class="safety-badge">Safe Area</span>
+            <span class="distance-badge">River Views</span>
           </div>
 
           <div class="hotel-card">
             <h3>Porto - Moov Hotel Porto Centro</h3>
-            <p class="price">€80 per night</p>
+            <p class="price">€65 per night</p>
             <p>
-              Budget-friendly hotel with clean rooms and a convenient location
-              for exploring the city.
+              Modern budget hotel with clean, comfortable rooms and an excellent
+              central location, perfect for exploring the city on foot.
             </p>
-            <p>Address: Praça da Batalha 32, 4000-101 Porto</p>
+            <p>
+              <span class="location-label">Address:</span> Praça da Batalha 32,
+              4000-101 Porto
+            </p>
+            <span class="safety-badge">Safe Area</span>
+            <span class="distance-badge">Central Location</span>
+          </div>
+
+          <div class="hotel-card">
+            <h3>Porto - Airbnb with Douro View</h3>
+            <p class="price">€75 per night</p>
+            <p>
+              Cozy apartment in the historic Ribeira district with direct views
+              of the Douro River and Dom Luís I Bridge. Traditional building
+              with modern interior.
+            </p>
+            <p>
+              <span class="location-label">Location:</span> Ribeira district,
+              2-minute walk to riverside
+            </p>
+            <span class="safety-badge">Safe Area</span>
+            <span class="distance-badge">Amazing View</span>
           </div>
         </div>
       </section>
@@ -547,7 +833,7 @@
               Contemporary twists on traditional recipes in a cheerful
               atmosphere. Try the crispy pork belly or tuna pica-pau.
             </p>
-            <p>Location: Alfama district</p>
+            <p><span class="location-label">Location:</span> Alfama district</p>
           </div>
 
           <div class="restaurant-card">
@@ -555,9 +841,10 @@
             <p class="price">€15-25 per meal</p>
             <p>
               Food hall featuring top Lisbon eateries with a wide variety of
-              options in one place.
+              options in one place. Perfect for solo travelers who want multiple
+              options.
             </p>
-            <p>Location: Cais do Sodré</p>
+            <p><span class="location-label">Location:</span> Cais do Sodré</p>
           </div>
 
           <div class="restaurant-card">
@@ -567,7 +854,7 @@
               Excellent seafood restaurant specializing in dishes like Polvo à
               Lagareiro (octopus with olive oil and garlic).
             </p>
-            <p>Location: Cais do Sodré</p>
+            <p><span class="location-label">Location:</span> Cais do Sodré</p>
           </div>
 
           <div class="restaurant-card">
@@ -575,9 +862,9 @@
             <p class="price">€20-30 per meal</p>
             <p>
               Located in a historic Moorish-style building, serving specialties
-              from the Alentejo region.
+              from the Alentejo region with a welcoming atmosphere.
             </p>
-            <p>Location: Baixa district</p>
+            <p><span class="location-label">Location:</span> Baixa district</p>
           </div>
 
           <div class="restaurant-card">
@@ -585,9 +872,11 @@
             <p class="price">€15-25 per meal</p>
             <p>
               Fusion restaurant with a creative menu and excellent wine
-              selection.
+              selection. Stylish interior perfect for a solo dining experience.
             </p>
-            <p>Location: Sintra town center</p>
+            <p>
+              <span class="location-label">Location:</span> Sintra town center
+            </p>
           </div>
 
           <div class="restaurant-card">
@@ -595,87 +884,288 @@
             <p class="price">€25-35 per meal</p>
             <p>
               Renowned seafood restaurant with ocean views and fresh daily
-              catches.
+              catches. The staff is attentive to solo diners.
             </p>
-            <p>Location: Near Boca do Inferno</p>
+            <p>
+              <span class="location-label">Location:</span> Near Boca do Inferno
+            </p>
+          </div>
+
+          <div class="restaurant-card">
+            <h3>Sesimbra - O Cantinho da Serra</h3>
+            <p class="price">€15-25 per meal</p>
+            <p>
+              Local seafood restaurant with fresh catch of the day and friendly
+              service. Great place to try traditional Portuguese seafood dishes.
+            </p>
+            <p>
+              <span class="location-label">Location:</span> Sesimbra town center
+            </p>
           </div>
 
           <div class="restaurant-card">
             <h3>Porto - Café Santiago</h3>
             <p class="price">€10-15 per meal</p>
-            <p>Famous for the Francesinha, Porto's signature sandwich.</p>
-            <p>Location: Rua de Passos Manuel</p>
+            <p>
+              Famous for the Francesinha, Porto's signature sandwich. Casual
+              atmosphere where solo diners feel comfortable.
+            </p>
+            <p>
+              <span class="location-label">Location:</span> Rua de Passos Manuel
+            </p>
+          </div>
+
+          <div class="restaurant-card">
+            <h3>Porto - Cantina 32</h3>
+            <p class="price">€20-30 per meal</p>
+            <p>
+              Trendy restaurant with an inventive menu and bar seating that's
+              perfect for solo travelers. Great for people watching.
+            </p>
+            <p><span class="location-label">Location:</span> Rua das Flores</p>
           </div>
         </div>
       </section>
 
-      <section id="attractions">
-        <h2>Must-See Attractions</h2>
-        <div class="attraction-container">
-          <div class="attraction-card">
-            <h3>Lisbon - São Jorge Castle</h3>
-            <p class="price">€15 per person</p>
-            <p>Historic Moorish castle offering panoramic views of Lisbon.</p>
-            <p>Hours: 9:00 AM - 6:00 PM daily</p>
-          </div>
-
-          <div class="attraction-card">
-            <h3>Lisbon - Jerónimos Monastery</h3>
-            <p class="price">€12.5 per person</p>
-            <p>UNESCO World Heritage site showcasing Manueline architecture.</p>
-            <p>Hours: 9:30 AM - 6:00 PM (Closed Mondays)</p>
-          </div>
-
-          <div class="attraction-card">
-            <h3>Lisbon - Belém Tower</h3>
-            <p class="price">€6 per person</p>
+      <section id="coffee">
+        <h2>Best Coffee Shops</h2>
+        <div class="coffee-container">
+          <div class="coffee-card">
+            <h3>Lisbon - Copenhagen Coffee Lab</h3>
+            <p class="price">€3-5 for coffee, €5-8 for breakfast</p>
             <p>
-              16th-century fortress symbolizing Portugal's Age of Discovery.
+              Scandinavian-style coffee shop with excellent espresso,
+              pour-overs, and freshly baked pastries. Quiet space good for
+              relaxing with a book.
             </p>
             <p>
-              Hours: 10:00 AM - 6:30 PM (May-Sep), 10:00 AM - 5:30 PM (Oct-Apr)
+              <span class="location-label">Location:</span> Multiple locations,
+              including Príncipe Real
             </p>
           </div>
 
-          <div class="attraction-card">
-            <h3>Lisbon - Oceanário de Lisboa</h3>
-            <p class="price">€25 per person</p>
+          <div class="coffee-card">
+            <h3>Lisbon - Hello, Kristof</h3>
+            <p class="price">€2.5-4 for coffee, €6-9 for snacks</p>
             <p>
-              One of the largest aquariums in the world with diverse marine
-              life.
+              Minimalist café with specialty coffee and international magazines.
+              Peaceful atmosphere ideal for a slow morning or journaling.
             </p>
-            <p>Hours: 10:00 AM - 7:00 PM daily</p>
-          </div>
-
-          <div class="attraction-card">
-            <h3>Sintra - Pena Palace</h3>
-            <p class="price">€10.82 per person</p>
-            <p>Vibrant 19th-century Romanticist palace with stunning views.</p>
-            <p>Hours: 9:30 AM - 6:30 PM daily</p>
-          </div>
-
-          <div class="attraction-card">
-            <h3>Sintra - Quinta da Regaleira</h3>
-            <p class="price">€22.72 per person</p>
             <p>
-              Neo-Gothic mansion with mystical gardens, secret tunnels, and the
-              famous Initiation Well.
+              <span class="location-label">Location:</span> Rua do Poço dos
+              Negros 103
             </p>
-            <p>Hours: 10:00 AM - 6:30 PM daily</p>
           </div>
 
-          <div class="attraction-card">
-            <h3>Cascais - Boca do Inferno</h3>
+          <div class="coffee-card">
+            <h3>Lisbon - Fábrica Coffee Roasters</h3>
+            <p class="price">€2.5-4 for coffee, €3-6 for pastries</p>
+            <p>
+              Specialty coffee roaster with expert baristas and light bites.
+              Their space has plenty of solo seating options.
+            </p>
+            <p>
+              <span class="location-label">Location:</span> Rua das Flores 63
+            </p>
+          </div>
+
+          <div class="coffee-card">
+            <h3>Lisbon - Nicolau Lisboa</h3>
+            <p class="price">€3-5 for coffee, €8-12 for brunch</p>
+            <p>
+              Instagram-friendly café with colorful décor and healthy brunch
+              options. Popular for their smoothie bowls and avocado toast.
+            </p>
+            <p>
+              <span class="location-label">Location:</span> Rua de São Nicolau
+              17
+            </p>
+          </div>
+
+          <div class="coffee-card">
+            <h3>Porto - Bird of Passage</h3>
+            <p class="price">€2.5-4 for coffee, €5-8 for breakfast</p>
+            <p>
+              Australian-inspired café with excellent espresso and a relaxed,
+              welcoming atmosphere. Good for digital nomads with power outlets.
+            </p>
+            <p>
+              <span class="location-label">Location:</span> Rua do Almada 23
+            </p>
+          </div>
+
+          <div class="coffee-card">
+            <h3>Porto - Majestic Café</h3>
+            <p class="price">€4-6 for coffee, €8-15 for breakfast</p>
+            <p>
+              Historic Art Nouveau café that's been in operation since 1921.
+              Ornate interior with plenty of charm. More expensive but worth it
+              for the experience.
+            </p>
+            <p>
+              <span class="location-label">Location:</span> Rua Santa Catarina
+              112
+            </p>
+          </div>
+
+          <div class="coffee-card">
+            <h3>Porto - Mesa 325</h3>
+            <p class="price">€2.5-4 for coffee, €6-10 for food</p>
+            <p>
+              Industrial-style café with artisanal coffee and delicious
+              breakfast options. Friendly staff who make solo travelers feel
+              welcome.
+            </p>
+            <p>
+              <span class="location-label">Location:</span> Avenida de França
+              256
+            </p>
+          </div>
+
+          <div class="coffee-card">
+            <h3>Sintra - Café Saudade</h3>
+            <p class="price">€2.5-4 for coffee, €5-8 for pastries</p>
+            <p>
+              Charming vintage-style café with homemade cakes and a cozy
+              atmosphere. Perfect spot to rest during your exploration of
+              Sintra.
+            </p>
+            <p>
+              <span class="location-label">Location:</span> Avenida Doutor
+              Miguel Bombarda 6
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="views">
+        <h2>Amazing Views</h2>
+        <div class="views-container">
+          <div class="view-card">
+            <h3>Lisbon - Miradouro da Senhora do Monte</h3>
             <p class="price">Free</p>
-            <p>Dramatic sea arch and collapsed cave with crashing waves.</p>
-            <p>Hours: Open 24/7</p>
+            <p>
+              The highest viewpoint in Lisbon offering a breathtaking 250-degree
+              panorama of the city. Less crowded than other viewpoints.
+            </p>
+            <p>
+              <span class="location-label">Best time:</span> Sunset for golden
+              hour lighting
+            </p>
           </div>
 
-          <div class="attraction-card">
-            <h3>Porto - Clérigos Tower</h3>
-            <p class="price">€6 per person</p>
-            <p>18th-century Baroque bell tower with panoramic city views.</p>
-            <p>Hours: 9:00 AM - 7:00 PM daily</p>
+          <div class="view-card">
+            <h3>Lisbon - Miradouro de Santa Luzia</h3>
+            <p class="price">Free</p>
+            <p>
+              Charming terrace with views over Alfama and the Tagus River.
+              Features traditional Portuguese tiles and a pergola with wisteria.
+            </p>
+            <p>
+              <span class="location-label">Best time:</span> Morning for
+              peaceful atmosphere
+            </p>
+          </div>
+
+          <div class="view-card">
+            <h3>Lisbon - Park Bar</h3>
+            <p class="price">Free entry (drinks €5-10)</p>
+            <p>
+              Rooftop bar on top of a parking garage with spectacular views of
+              the Tagus River and 25 de Abril Bridge. Relaxed atmosphere.
+            </p>
+            <p>
+              <span class="location-label">Best time:</span> Late afternoon to
+              evening
+            </p>
+          </div>
+
+          <div class="view-card">
+            <h3>Lisbon - Miradouro da Graça</h3>
+            <p class="price">Free</p>
+            <p>
+              Terrace viewpoint with sweeping views of central Lisbon, São Jorge
+              Castle, and the river. Has a small café.
+            </p>
+            <p><span class="location-label">Best time:</span> Late afternoon</p>
+          </div>
+
+          <div class="view-card">
+            <h3>Sintra - Pena Palace Terrace</h3>
+            <p class="price">Included with palace ticket (€10.82)</p>
+            <p>
+              Spectacular views from the colorful palace terraces overlooking
+              the mountains of Sintra and, on clear days, all the way to the
+              Atlantic.
+            </p>
+            <p>
+              <span class="location-label">Best time:</span> Morning to avoid
+              crowds
+            </p>
+          </div>
+
+          <div class="view-card">
+            <h3>Sesimbra - Sesimbra Castle</h3>
+            <p class="price">€3</p>
+            <p>
+              Medieval castle with panoramic views over the town and coastline.
+              Peaceful spot away from crowds.
+            </p>
+            <p>
+              <span class="location-label">Best time:</span> Late morning or
+              late afternoon
+            </p>
+          </div>
+
+          <div class="view-card">
+            <h3>Cascais - Boca do Inferno Cliff Walk</h3>
+            <p class="price">Free</p>
+            <p>
+              Dramatic coastal views from the cliff path leading to and around
+              the Boca do Inferno sea arch.
+            </p>
+            <p>
+              <span class="location-label">Best time:</span> Late afternoon for
+              golden light
+            </p>
+          </div>
+
+          <div class="view-card">
+            <h3>Porto - Dom Luís I Bridge Upper Deck</h3>
+            <p class="price">Free</p>
+            <p>
+              Spectacular views of Porto and Vila Nova de Gaia from the upper
+              deck of this iconic double-decker bridge.
+            </p>
+            <p>
+              <span class="location-label">Best time:</span> Sunset and blue
+              hour
+            </p>
+          </div>
+
+          <div class="view-card">
+            <h3>Porto - Jardim do Morro</h3>
+            <p class="price">Free</p>
+            <p>
+              Garden viewpoint in Vila Nova de Gaia with stunning views of
+              Porto's riverside district. Popular sunset spot with locals.
+            </p>
+            <p>
+              <span class="location-label">Best time:</span> Golden hour/sunset
+            </p>
+          </div>
+
+          <div class="view-card">
+            <h3>Porto - Miradouro da Vitória</h3>
+            <p class="price">Free</p>
+            <p>
+              Hidden viewpoint offering spectacular views of the Douro River,
+              Dom Luís I Bridge, and Porto's historic center.
+            </p>
+            <p>
+              <span class="location-label">Best time:</span> Morning or late
+              afternoon
+            </p>
           </div>
         </div>
       </section>
@@ -710,6 +1200,14 @@
           </div>
 
           <div class="transport-card">
+            <h3>Lisbon to Sesimbra</h3>
+            <ul>
+              <li>Bus: €4.50 one way (1 hour)</li>
+              <li>Uber/Bolt: €30-40</li>
+            </ul>
+          </div>
+
+          <div class="transport-card">
             <h3>Lisbon to Porto</h3>
             <ul>
               <li>Train: €20-35 (3 hours)</li>
@@ -724,6 +1222,7 @@
               <li>24-hour ticket: €6.75</li>
               <li>Single metro/bus ticket: €1.65</li>
               <li>Viva Viagem card: €0.50 + top-up</li>
+              <li>Tram 28 ticket: €3.00</li>
             </ul>
           </div>
 
@@ -735,12 +1234,23 @@
               <li>Andante card: €0.60 + top-up</li>
             </ul>
           </div>
+
+          <div class="transport-card">
+            <h3>Safety Tips for Solo Travelers</h3>
+            <ul>
+              <li>Use official taxis or ride-sharing apps</li>
+              <li>Keep valuables secure, especially in tourist areas</li>
+              <li>Share your itinerary with someone you trust</li>
+              <li>Stay in well-lit, populated areas at night</li>
+              <li>Get a local SIM card for constant connectivity</li>
+            </ul>
+          </div>
         </div>
       </section>
     </main>
 
     <footer>
-      <p>Created for your Portugal Trip: April 25 - May 2, 2025</p>
+      <p>Created for your Solo Portugal Trip: April 25 - May 2, 2025</p>
       <p>Last updated: <span id="last-updated"></span></p>
     </footer>
   </body>

@@ -1,13 +1,14 @@
 /* Global Styles */
 :root {
-    --primary-color: #1a6da3;
-    --secondary-color: #d6b44a;
-    --background-color: #f7f9fc;
+    --primary-color: #2C7A7B; /* Teal blue */
+    --secondary-color: #F6AD55; /* Orange */
+    --accent-color: #4FD1C5; /* Light teal */
+    --background-color: #F0F5F9; /* Light blue-gray */
     --card-bg-color: #ffffff;
-    --text-color: #333333;
-    --visited-color: #6a9955;
-    --border-radius: 8px;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --text-color: #2D3748; /* Dark gray */
+    --visited-color: #68D391; /* Green */
+    --border-radius: 12px;
+    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     --transition: all 0.3s ease;
 }
 
@@ -26,21 +27,24 @@ body {
 
 /* Header */
 header {
-    background-color: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     color: white;
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 3rem 1rem;
     position: relative;
+    box-shadow: var(--shadow);
 }
 
 header h1 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
+    letter-spacing: 1px;
 }
 
 header h2 {
     font-size: 1.5rem;
     font-weight: normal;
+    opacity: 0.9;
 }
 
 /* Navigation */
@@ -70,8 +74,9 @@ nav a {
     display: block;
     color: var(--text-color);
     text-decoration: none;
-    padding: 1rem;
+    padding: 1.2rem 1.5rem;
     transition: var(--transition);
+    font-weight: 500;
 }
 
 nav a:hover {
@@ -95,6 +100,8 @@ section h2 {
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid var(--secondary-color);
+    font-size: 1.8rem;
+    letter-spacing: 0.5px;
 }
 
 /* Overview Section */
@@ -109,6 +116,11 @@ section h2 {
     padding: 1.5rem;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.overview-card:hover {
+    transform: translateY(-5px);
 }
 
 .overview-card h3 {
@@ -123,12 +135,38 @@ section h2 {
     box-shadow: var(--shadow);
     margin-bottom: 2rem;
     overflow: hidden;
+    transition: var(--transition);
+}
+
+.day-container:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .day-container h3 {
-    background-color: var(--primary-color);
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
     color: white;
-    padding: 1rem;
+    padding: 1.2rem;
+}
+
+.weather-info {
+    background-color: rgba(0, 0, 0, 0.02);
+    padding: 0.75rem 1.5rem;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-around;
+}
+
+.weather-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.weather-label {
+    font-weight: bold;
+    color: var(--primary-color);
 }
 
 .time-section {
@@ -140,8 +178,9 @@ section h2 {
 
 .time-card {
     background-color: rgba(0, 0, 0, 0.03);
-    padding: 1rem;
+    padding: 1.2rem;
     border-radius: var(--border-radius);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .time-card h4 {
@@ -149,6 +188,18 @@ section h2 {
     margin-bottom: 0.75rem;
     border-bottom: 1px solid #ddd;
     padding-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.time-card h4::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
 }
 
 .time-card ul {
@@ -159,12 +210,21 @@ section h2 {
     display: flex;
     align-items: flex-start;
     margin-bottom: 0.75rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.item:hover {
+    background-color: rgba(0, 0, 0, 0.02);
 }
 
 .item input[type="checkbox"] {
     margin-right: 0.5rem;
     margin-top: 0.25rem;
     cursor: pointer;
+    width: 18px;
+    height: 18px;
 }
 
 .item input[type="checkbox"]:checked + label {
@@ -181,7 +241,9 @@ section h2 {
 .hotel-container, 
 .restaurant-container, 
 .attraction-container,
-.transport-container {
+.transport-container,
+.coffee-container,
+.views-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
@@ -190,34 +252,76 @@ section h2 {
 .hotel-card, 
 .restaurant-card, 
 .attraction-card,
-.transport-card {
+.transport-card,
+.coffee-card,
+.view-card {
     background-color: var(--card-bg-color);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     padding: 1.5rem;
     transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .hotel-card:hover, 
 .restaurant-card:hover, 
 .attraction-card:hover,
-.transport-card:hover {
+.transport-card:hover,
+.coffee-card:hover,
+.view-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .hotel-card h3, 
 .restaurant-card h3, 
 .attraction-card h3,
-.transport-card h3 {
+.transport-card h3,
+.coffee-card h3,
+.view-card h3 {
     color: var(--primary-color);
     margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dashed #eee;
 }
 
 .price {
     color: var(--secondary-color);
     font-weight: bold;
     margin-bottom: 0.75rem;
+    display: inline-block;
+    padding: 0.3rem 0.6rem;
+    background-color: rgba(246, 173, 85, 0.1);
+    border-radius: 4px;
+}
+
+.location-label {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-right: 0.25rem;
+}
+
+.safety-badge {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.distance-badge {
+    display: inline-block;
+    background-color: var(--visited-color);
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
 }
 
 /* Transportation Section */
@@ -228,6 +332,8 @@ section h2 {
 .transport-card li {
     padding: 0.5rem 0;
     border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
 }
 
 .transport-card li:last-child {
@@ -238,8 +344,100 @@ section h2 {
 footer {
     text-align: center;
     padding: 2rem 1rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    margin-top: 3rem;
+}
+
+/* Progress Summary */
+.progress-summary {
+    background-color: var(--card-bg-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.progress-container {
+    flex: 1;
+    min-width: 250px;
+}
+
+.progress-bar {
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--visited-color);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.reset-button {
+    background-color: #FC8181;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    margin-left: 1rem;
+    font-weight: 600;
+}
+
+.reset-button:hover {
+    background-color: #E53E3E;
+    transform: translateY(-2px);
+}
+
+/* Day Navigation */
+.day-navigation {
+    background-color: var(--card-bg-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.day-navigation h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.day-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.day-link {
     background-color: var(--primary-color);
     color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+}
+
+.day-link:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
 }
 
 /* Responsive Design */
@@ -258,6 +456,16 @@ footer {
 
     .time-section {
         grid-template-columns: 1fr;
+    }
+    
+    .progress-summary {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .reset-button {
+        margin-left: 0;
+        margin-top: 1rem;
     }
 }
 

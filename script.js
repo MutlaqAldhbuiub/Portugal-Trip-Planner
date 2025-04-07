@@ -20,6 +20,15 @@ document.addEventListener('DOMContentLoaded', function() {
         checkbox.addEventListener('change', function() {
             localStorage.setItem(this.id, this.checked);
             updateProgressSummary();
+            
+            // Add visual feedback when checking an item
+            const label = this.nextElementSibling;
+            if (this.checked) {
+                label.style.animation = 'completedPulse 0.5s';
+                setTimeout(() => {
+                    label.style.animation = '';
+                }, 500);
+            }
         });
     });
 
@@ -78,6 +87,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add day navigation
     addDayNavigation();
+    
+    // Add filter functionality for sections with cards
+    addCardFilters();
+    
+    // Add hover effects to cards
+    addCardInteractivity();
+    
+    // Add back to top button
+    addBackToTopButton();
+    
+    // Add weather tooltip info
+    addWeatherInfo();
 });
 
 // Update progress summary
@@ -99,11 +120,11 @@ function updateProgressSummary() {
         
         // Change color based on progress
         if (percentage < 33) {
-            progressFill.style.backgroundColor = '#f44336'; // Red
+            progressFill.style.backgroundColor = '#FC8181'; // Red
         } else if (percentage < 66) {
-            progressFill.style.backgroundColor = '#ff9800'; // Orange
+            progressFill.style.backgroundColor = '#F6AD55'; // Orange
         } else {
-            progressFill.style.backgroundColor = '#4caf50'; // Green
+            progressFill.style.backgroundColor = '#68D391'; // Green
         }
     }
 }
@@ -148,6 +169,173 @@ function addDayNavigation() {
         const h2 = itinerarySection.querySelector('h2');
         h2.parentNode.insertBefore(navDiv, h2.nextSibling);
     }
+}
+
+// Add filter functionality for hotel, restaurant, and attraction sections
+function addCardFilters() {
+    const sections = [
+        {id: 'hotels', filterOptions: ['All', 'Lisbon', 'Porto', 'Airbnb', 'Budget']},
+        {id: 'restaurants', filterOptions: ['All', 'Lisbon', 'Porto', 'Sintra', 'Cascais', 'Sesimbra', 'Budget', 'Seafood']},
+        {id: 'attractions', filterOptions: ['All', 'Lisbon', 'Porto', 'Sintra', 'Cascais', 'Sesimbra', 'Free']},
+        {id: 'coffee', filterOptions: ['All', 'Lisbon', 'Porto', 'Sintra', 'Budget']},
+        {id: 'views', filterOptions: ['All', 'Lisbon', 'Porto', 'Sintra', 'Cascais', 'Sesimbra', 'Free', 'Sunset']}
+    ];
+    
+    sections.forEach(section => {
+        const sectionElement = document.getElementById(section.id);
+        if (!sectionElement) return;
+        
+        const h2 = sectionElement.querySelector('h2');
+        const filterDiv = document.createElement('div');
+        filterDiv.className = 'filter-container';
+        filterDiv.innerHTML = `
+            <div class="filter-label">Filter by:</div>
+            <div class="filter-buttons"></div>
+        `;
+        
+        const buttonContainer = filterDiv.querySelector('.filter-buttons');
+        
+        section.filterOptions.forEach(option => {
+            const button = document.createElement('button');
+            button.className = 'filter-button';
+            button.textContent = option;
+            button.dataset.filter = option.toLowerCase();
+            
+            if (option === 'All') {
+                button.classList.add('active');
+            }
+            
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                buttonContainer.querySelectorAll('.filter-button').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Filter the cards
+                filterCards(section.id, this.dataset.filter);
+            });
+            
+            buttonContainer.appendChild(button);
+        });
+        
+        h2.parentNode.insertBefore(filterDiv, h2.nextSibling);
+    });
+}
+
+// Filter cards based on selected filter
+function filterCards(sectionId, filter) {
+    const section = document.getElementById(sectionId);
+    if (!section) return;
+    
+    const cardClass = `${sectionId.slice(0, -1)}-card`;
+    const cards = section.querySelectorAll(`.${cardClass}`);
+    
+    if (filter === 'all') {
+        // Show all cards
+        cards.forEach(card => {
+            card.style.display = '';
+        });
+    } else {
+        // Filter cards
+        cards.forEach(card => {
+            const cardTitle = card.querySelector('h3').textContent.toLowerCase();
+            const cardDesc = card.querySelector('p:not(.price)').textContent.toLowerCase();
+            const price = card.querySelector('.price').textContent.toLowerCase();
+            
+            if (cardTitle.includes(filter) || 
+                cardDesc.includes(filter) || 
+                (filter === 'free' && price.includes('free')) ||
+                (filter === 'budget' && (
+                    price.includes('€5') || 
+                    price.includes('€6') || 
+                    price.includes('€7') || 
+                    price.includes('€8') || 
+                    price.includes('€9') ||
+                    price.includes('€10') ||
+                    price.includes('€15')
+                )) ||
+                (filter === 'sunset' && cardDesc.includes('sunset'))
+            ) {
+                card.style.display = '';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+    
+    // Adjust the container layout
+    const container = section.querySelector(`.${sectionId}-container`);
+    if (container) {
+        container.style.display = 'grid';
+    }
+}
+
+// Add hover effects and interactivity to cards
+function addCardInteractivity() {
+    const cards = document.querySelectorAll('.hotel-card, .restaurant-card, .attraction-card, .coffee-card, .view-card');
+    
+    cards.forEach(card => {
+        // Add hover effect
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px)';
+            this.style.boxShadow = '0 25px 50px -12px rgba(0, 0, 0, 0.25)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = '';
+            this.style.boxShadow = '';
+        });
+    });
+}
+
+// Add back to top button
+function addBackToTopButton() {
+    const backToTopButton = document.createElement('button');
+    backToTopButton.className = 'back-to-top';
+    backToTopButton.innerHTML = '↑';
+    backToTopButton.title = 'Back to Top';
+    document.body.appendChild(backToTopButton);
+    
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            backToTopButton.classList.add('show');
+        } else {
+            backToTopButton.classList.remove('show');
+        }
+    });
+    
+    // Scroll to top when clicked
+    backToTopButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// Add weather information
+function addWeatherInfo() {
+    const weatherItems = document.querySelectorAll('.weather-item');
+    
+    weatherItems.forEach(item => {
+        // Add icon based on weather description
+        const weatherText = item.textContent.toLowerCase();
+        let icon = '☀️'; // Default sunny
+        
+        if (weatherText.includes('cloudy') || weatherText.includes('partly')) {
+            icon = '⛅';
+        } else if (weatherText.includes('rain') || weatherText.includes('shower')) {
+            icon = '🌧️';
+        } else if (weatherText.includes('clear')) {
+            icon = '✨';
+        }
+        
+        item.innerHTML = `${icon} ${item.innerHTML}`;
+    });
 }
 
 // Add CSS for the new elements
@@ -248,6 +436,107 @@ document.addEventListener('DOMContentLoaded', function() {
             .reset-button {
                 margin-left: 0;
                 margin-top: 1rem;
+            }
+        }
+        
+        /* Filter styles */
+        .filter-container {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+            background-color: var(--card-bg-color);
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .filter-label {
+            font-weight: bold;
+            margin-right: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .filter-button {
+            background-color: #f0f0f0;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .filter-button.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .filter-button:hover:not(.active) {
+            background-color: #e0e0e0;
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+        
+        /* Animation for completing an item */
+        @keyframes completedPulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .filter-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .filter-label {
+                margin-bottom: 0.5rem;
+            }
+            
+            .back-to-top {
+                bottom: 1rem;
+                right: 1rem;
+                width: 40px;
+                height: 40px;
             }
         }
     `;
